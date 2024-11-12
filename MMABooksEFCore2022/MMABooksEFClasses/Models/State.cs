@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MMABooksEFClasses.MarisModels
+namespace MMABooksEFClasses.Models
 {
     public partial class State
     {
@@ -10,13 +10,8 @@ namespace MMABooksEFClasses.MarisModels
             Customers = new HashSet<Customer>();
         }
 
-        public string StateCode { get; set; }
-        public string StateName { get; set; }
-
-        public override string ToString()
-        {
-            return StateCode + ", " + StateName;
-        }
+        public string StateCode { get; set; } = null!;
+        public string StateName { get; set; } = null!;
 
         public virtual ICollection<Customer> Customers { get; set; }
     }

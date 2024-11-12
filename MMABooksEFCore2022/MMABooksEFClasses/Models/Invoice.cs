@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MMABooksEFClasses.MarisModels
+namespace MMABooksEFClasses.Models
 {
-    public partial class Invoices
+    public partial class Invoice
     {
-        public Invoices()
+        public Invoice()
         {
-            Invoicelineitems = new HashSet<Invoicelineitems>();
+            InvoiceLineItems = new HashSet<InvoiceLineItem>();
         }
 
         public int InvoiceId { get; set; }
@@ -18,7 +18,7 @@ namespace MMABooksEFClasses.MarisModels
         public decimal Shipping { get; set; }
         public decimal InvoiceTotal { get; set; }
 
-        public virtual Customer Customer { get; set; }
-        public virtual ICollection<Invoicelineitems> Invoicelineitems { get; set; }
+        public virtual Customer Customer { get; set; } = null!;
+        public virtual ICollection<InvoiceLineItem> InvoiceLineItems { get; set; }
     }
 }
